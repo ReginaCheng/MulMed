@@ -1,0 +1,101 @@
+
+
+
+
+
+
+
+
+
+  0%|▏                                                                                             | 8/3453 [02:58<21:05:42, 22.04s/it]
+
+
+
+
+
+
+
+  0%|▍                                                                                            | 15/3453 [05:32<20:59:25, 21.98s/it]
+
+
+
+
+
+
+
+
+  1%|▌                                                                                            | 23/3453 [08:27<20:55:56, 21.97s/it]
+
+
+
+
+
+
+
+
+  1%|▊                                                                                            | 32/3453 [11:45<20:52:21, 21.96s/it]
+  0%|                                                                                                           | 0/63 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+ 92%|██████████████████████████████████████████████████████████████████████████████████████████▏       | 58/63 [00:18<00:01,  3.16it/s]
+
+
+
+
+
+
+
+
+  1%|█                                                                                            | 40/3453 [15:01<21:17:21, 22.46s/it]
+
+
+
+
+
+
+
+  1%|█▎                                                                                           | 47/3453 [17:34<20:48:47, 22.00s/it]
+
+
+
+
+
+
+
+
+  2%|█▍                                                                                           | 55/3453 [20:30<20:43:58, 21.97s/it]
+
+
+
+
+
+  2%|█▌                                                                                           | 60/3453 [22:20<20:42:57, 21.98s/it]Traceback (most recent call last):
+  File "/root/ours/finetune.py", line 274, in <module>
+    fire.Fire(train)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/root/ours/finetune.py", line 264, in train
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/trainer.py", line 1664, in train
+    return inner_training_loop(
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/trainer.py", line 1940, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/trainer.py", line 2745, in training_step
+    self.scaler.scale(loss).backward()
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/_tensor.py", line 487, in backward
+    torch.autograd.backward(
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/autograd/__init__.py", line 200, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

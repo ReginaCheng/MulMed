@@ -1,0 +1,69 @@
+
+  0%|                                                                                                                                  | 0/535 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/root/ours/finetune.py", line 274, in <module>
+    fire.Fire(train)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/fire/core.py", line 141, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/fire/core.py", line 475, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/fire/core.py", line 691, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/root/ours/finetune.py", line 264, in train
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/trainer.py", line 1664, in train
+    return inner_training_loop(
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/trainer.py", line 1940, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/trainer.py", line 2735, in training_step
+    loss = self.compute_loss(model, inputs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/trainer.py", line 2767, in compute_loss
+    outputs = model(**inputs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/peft/peft_model.py", line 678, in forward
+    return self.base_model(
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = old_forward(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 688, in forward
+    outputs = self.model(
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = old_forward(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 570, in forward
+    layer_outputs = torch.utils.checkpoint.checkpoint(
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/utils/checkpoint.py", line 249, in checkpoint
+    return CheckpointFunction.apply(function, preserve, *args)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/autograd/function.py", line 506, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/utils/checkpoint.py", line 107, in forward
+    outputs = run_function(*args)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 566, in custom_forward
+    return module(*inputs, output_attentions, None)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = old_forward(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 306, in forward
+    hidden_states = self.mlp(hidden_states)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = old_forward(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 158, in forward
+    return self.down_proj(self.act_fn(self.gate_proj(x)) * self.up_proj(x))
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/accelerate/hooks.py", line 165, in new_forward
+    output = old_forward(*args, **kwargs)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/bitsandbytes/nn/modules.py", line 320, in forward
+    out = bnb.matmul(x, self.weight, bias=self.bias, state=self.state)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/bitsandbytes/autograd/_functions.py", line 500, in matmul
+    return MatMul8bitLt.apply(A, B, out, bias, state)
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/torch/autograd/function.py", line 506, in apply
+    return super().apply(*args, **kwargs)  # type: ignore[misc]
+  File "/root/miniconda3/envs/myconda/lib/python3.9/site-packages/bitsandbytes/autograd/_functions.py", line 435, in forward
+    return clone_func(output.view(output_shape))
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.03 GiB (GPU 0; 79.17 GiB total capacity; 58.29 GiB already allocated; 3.68 GiB free; 74.30 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
